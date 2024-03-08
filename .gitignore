@@ -8,3 +8,4 @@ backend/pnpm-lock.yaml
 backend/node_modules
 backend/node_modules/
 .env/
+git rm --cached .env
