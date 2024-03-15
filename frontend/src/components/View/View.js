@@ -30,7 +30,7 @@ const View = () => {
             <strong>Title : {task.title}</strong>
           </div>
           <div className="mb-3">
-            <strong>Title : {task.description}</strong>
+            <strong>Description : {task.description}</strong>
           </div>
           <Link to={`/update/${task['_id']}`} className="btn btn-success">Edit</Link>
           <Link to={'/'} className="btn btn-primary ms-3">Back</Link>

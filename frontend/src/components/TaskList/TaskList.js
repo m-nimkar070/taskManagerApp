@@ -20,7 +20,8 @@ const TaskList = ({ isEdited }) => {
       setTask(result.data);
     } catch (error) {
       console.log(error);
-    }finally{
+    }
+    finally{
       setIsLoading(false);
     }
   };
@@ -117,7 +118,13 @@ const TaskList = ({ isEdited }) => {
               Sort
             </button>
           </div>
-          {task ? (
+          {isLoading ? 
+          (<div class="spinner-border text-primary" role="status">
+              <span class="sr-only"></span>
+          </div>)
+          :
+          (
+            task ? (
             <table className=" table table-striped">
               <thead>
                 <tr>
@@ -157,6 +164,7 @@ const TaskList = ({ isEdited }) => {
             </table>
           ) : (
             "Nothing to show"
+          )
           )}
         </div>
       )}
