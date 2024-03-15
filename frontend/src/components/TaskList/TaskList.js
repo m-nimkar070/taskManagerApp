@@ -29,10 +29,16 @@ const TaskList = ({ isEdited }) => {
   // Function to handle dlete the document from Db
   const handleDelete = async (id) => {
     const confirm = window.confirm("Are you sure to delete this task !");
-    if (confirm) {
-      axios.delete(`${config.endpoint}/${id}`);
+    try {
+      if (confirm) {
+        axios.delete(`${config.endpoint}/${id}`);
+        const updatedRecords = task.filter((record) => record['_id']!== id);
+        setTask(updatedRecords);
+        // console.log("delete success and update UI")
+      }
+    } catch (error) {
+      console.log(error)
     }
-    window.location.reload();
   };
 
   //Function to sort pass sorting values to data function onClick
@@ -119,8 +125,8 @@ const TaskList = ({ isEdited }) => {
             </button>
           </div>
           {isLoading ? 
-          (<div class="spinner-border text-primary" role="status">
-              <span class="sr-only"></span>
+          (<div className="spinner-border text-primary" role="status">
+              <span className="sr-only"></span>
           </div>)
           :
           (
