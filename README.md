@@ -1,6 +1,9 @@
 # TaskManagerApp
 Brach is Master
 
+## Deployment link
+https://thetaskmanagerapp.netlify.app/
+
 It is a Full Stack react application:
 Functionality provided : Add, View , Edit , Delete , Sort(Ascending and Descending)CreatedAt and Search.
 
